@@ -1,0 +1,14 @@
+[{
+    "Serial":"COM1",
+    "COM":"/dev/ttyUSB0",
+    "baudRate": 9600,
+    "TagNo":"A",
+    "Filename": "COM1.txt"
+},{
+    "Serial":"COM2",
+    "COM":"/dev/ttyUSB1",
+    "baudRate": 9600,
+    "TagNo":"B",
+    "Filename": "COM2.txt"
+    
+}]

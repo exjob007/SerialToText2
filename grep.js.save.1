@@ -1,0 +1,55 @@
+const express = require('express')
+const app = express()
+const SerialPort = require('serialport')
+var cmd = require('node-cmd')
+var fs = require('fs')
+var JFile = require('jfile')
+var pathsave = '/home/FileSystem/'
+
+var serialPort = new SerialPort('/dev/ttyUSB0', {
+	baudRate: 9600,
+	parser: new SerialPort.parsers.Readline("\n")
+
+})
+
+var checkTimeOut = 1
+
+serialPort.on('open', ()=>{
+	console.log('port open')
+
+})
+
+seralPort.
+
+
+var redate = () =>{
+	if(checkTimeOut == 0)
+	{
+	checkTimeOut = 1
+	var txtFile = new JFile('./FY-001B1.txt')
+	var result = txtFile.grep('Printed at ')
+	var tagName = txtFile.grep('Tag No.:')
+	var name = tagName[0].split("Tag No.: ")
+	name = name[1].trim()
+	name = name + '.txt'
+	var date = result[0].split('Printed at : ')[1].split(" ")[0]
+	var redate = date.split("/")
+	redate = redate[2] + "/" + redate[1] + "/" + redate[0]
+//	console.log(redate + " name : " + name)
+	savePath(redate,name)
+	}
+}
+
+var savePath = (date,name) =>{
+//	console.log(date + " " + name)
+//	cmd.get('cp ./output.txt ' + path + redate
+	var cmdline = 'cp ./output.txt '+ pathsave + date + '/' + name
+		console.log(cmd)
+	cmd.get(cmdline + '; ' + 'rm ./output.txt', (err,data,stdeer) =>{
+		console.log(err)
+	})
+}
+
+//redate()
+
+

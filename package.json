@@ -1,0 +1,16 @@
+{
+  "name": "Serial",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "fs": "^0.0.1-security",
+    "global": "^4.3.2",
+    "jfile": "^1.1.12",
+    "node-cmd": "^3.0.0",
+    "nodemon": "^1.18.9",
+    "pm2": "^3.2.9",
+    "serialport": "^7.1.4"
+  }
+}

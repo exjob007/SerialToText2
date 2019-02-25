@@ -1,0 +1,28 @@
+const express = require('express')
+const app = express()
+var cmd = require('node-cmd')
+var fs = require('fs')
+var JFile = require('jfile')
+
+
+
+
+function redate(){
+	var txtFile = new JFile('./output.txt')
+	var result = txtFile.grep('Printed at ')
+	var tagName = txtFile.grep('Tag No.: ')
+	tagName  = tagName[0].split('Tag No	var date = result[0].split('Printed at : ')[1].split(" ")[0]
+	var redate = date.split("/")
+	redate = redate[2] + "/" + redate[1] + "/" + redate[0]
+	console.log(redate)
+
+}
+
+function savepath() {
+	
+
+
+
+}
+
+
